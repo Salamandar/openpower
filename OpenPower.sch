@@ -1,0 +1,628 @@
+EESchema Schematic File Version 4
+LIBS:OpenPower-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Regulator_Linear:LT1083-3.3 U1
+U 1 1 5D694CE1
+P 2050 2000
+F 0 "U1" H 2050 2242 50  0000 C CNN
+F 1 "XC6206P" H 2050 2150 50  0000 C CNN
+F 2 "" H 2050 2250 50  0001 C CIN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/1083ffe.pdf" H 2050 2000 50  0001 C CNN
+	1    2050 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5D69639F
+P 1650 2150
+F 0 "C3" H 1650 2250 50  0000 L CNN
+F 1 "1u" H 1650 2050 50  0000 L CNN
+F 2 "" H 1688 2000 50  0001 C CNN
+F 3 "~" H 1650 2150 50  0001 C CNN
+	1    1650 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5D69686C
+P 2450 2150
+F 0 "C4" H 2450 2250 50  0000 L CNN
+F 1 "1u" H 2450 2050 50  0000 L CNN
+F 2 "" H 2488 2000 50  0001 C CNN
+F 3 "~" H 2450 2150 50  0001 C CNN
+	1    2450 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5D69A595
+P 2050 2300
+F 0 "#PWR01" H 2050 2050 50  0001 C CNN
+F 1 "GND" H 2050 2150 50  0000 C CNN
+F 2 "" H 2050 2300 50  0001 C CNN
+F 3 "" H 2050 2300 50  0001 C CNN
+	1    2050 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 2000 1750 2000
+Wire Wire Line
+	2350 2000 2450 2000
+Wire Wire Line
+	2450 2300 2050 2300
+Connection ~ 2050 2300
+Wire Wire Line
+	2050 2300 1650 2300
+Wire Wire Line
+	1650 2000 1550 2000
+Connection ~ 1650 2000
+Wire Wire Line
+	2450 2000 2550 2000
+Connection ~ 2450 2000
+$Comp
+L power:+3V3 #PWR04
+U 1 1 5D69D68E
+P 2550 2000
+F 0 "#PWR04" H 2550 1850 50  0001 C CNN
+F 1 "+3V3" H 2550 2150 50  0000 C CNN
+F 2 "" H 2550 2000 50  0001 C CNN
+F 3 "" H 2550 2000 50  0001 C CNN
+	1    2550 2000
+	1    0    0    -1  
+$EndComp
+Text Label 1550 2000 2    50   ~ 0
+Vinput[3.5-5.5V]
+Text Label 1500 4500 2    50   ~ 0
+Vinput[3.5-5.5V]
+$Comp
+L Device:C C2
+U 1 1 5D6DB7E8
+P 1600 4850
+F 0 "C2" H 1600 4950 50  0000 L CNN
+F 1 "22u" H 1600 4750 50  0000 L CNN
+F 2 "" H 1638 4700 50  0001 C CNN
+F 3 "~" H 1600 4850 50  0001 C CNN
+	1    1600 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Switching:LMR10510XMF U3
+U 1 1 5D6DF1D3
+P 2300 4800
+F 0 "U3" H 2150 4550 50  0000 C CNN
+F 1 "MT3608" H 2500 4550 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2350 4550 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lmr10510.pdf" H 2300 4900 50  0001 C CNN
+	1    2300 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 4500 1600 4500
+Connection ~ 1600 4500
+Wire Wire Line
+	1600 4500 1900 4500
+Wire Wire Line
+	2000 4900 1900 4900
+Wire Wire Line
+	1900 4900 1900 4700
+Connection ~ 1900 4700
+Wire Wire Line
+	1900 4700 2000 4700
+Wire Wire Line
+	2300 5100 2300 5200
+$Comp
+L power:GND #PWR03
+U 1 1 5D6E8B39
+P 2300 5200
+F 0 "#PWR03" H 2300 4950 50  0001 C CNN
+F 1 "GND" H 2300 5050 50  0000 C CNN
+F 2 "" H 2300 5200 50  0001 C CNN
+F 3 "" H 2300 5200 50  0001 C CNN
+	1    2300 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 5200 2300 5200
+Connection ~ 2300 5200
+$Comp
+L Device:L L2
+U 1 1 5D6E52B3
+P 2350 4500
+F 0 "L2" V 2540 4500 50  0000 C CNN
+F 1 "22uH" V 2450 4500 50  0000 C CNN
+F 2 "" H 2350 4500 50  0001 C CNN
+F 3 "~" H 2350 4500 50  0001 C CNN
+	1    2350 4500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2200 4500 1900 4500
+Wire Wire Line
+	1900 4500 1900 4700
+Wire Wire Line
+	2500 4500 2700 4500
+Wire Wire Line
+	2700 4500 2700 4700
+Wire Wire Line
+	2700 4700 2600 4700
+$Comp
+L Device:L L3
+U 1 1 5D6EF5CC
+P 3200 4950
+F 0 "L3" V 3390 4950 50  0000 C CNN
+F 1 "22uH" V 3300 4950 50  0000 C CNN
+F 2 "" H 3200 4950 50  0001 C CNN
+F 3 "~" H 3200 4950 50  0001 C CNN
+	1    3200 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5D6F00BB
+P 2950 4500
+F 0 "C5" V 2900 4350 50  0000 L CNN
+F 1 "5.6u" V 2900 4550 50  0000 L CNN
+F 2 "" H 2988 4350 50  0001 C CNN
+F 3 "~" H 2950 4500 50  0001 C CNN
+	1    2950 4500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2700 4500 2800 4500
+Wire Wire Line
+	3100 4500 3200 4500
+Connection ~ 2700 4500
+Wire Wire Line
+	3200 5200 2300 5200
+Wire Wire Line
+	3200 5100 3200 5200
+$Comp
+L Device:C C7
+U 1 1 5D6F726A
+P 3700 4850
+F 0 "C7" H 3700 4950 50  0000 L CNN
+F 1 "22u" H 3700 4750 50  0000 L CNN
+F 2 "" H 3738 4700 50  0001 C CNN
+F 3 "~" H 3700 4850 50  0001 C CNN
+	1    3700 4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C9
+U 1 1 5D6F7997
+P 3900 4850
+F 0 "C9" H 3900 4950 50  0000 L CNN
+F 1 "100u" H 3900 4750 50  0000 R CNN
+F 2 "" H 3938 4700 50  0001 C CNN
+F 3 "~" H 3900 4850 50  0001 C CNN
+	1    3900 4850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3700 5200 3900 5200
+Wire Wire Line
+	3200 5200 3700 5200
+Connection ~ 3200 5200
+Connection ~ 3700 5200
+Connection ~ 3900 5200
+Wire Wire Line
+	3200 4500 3300 4500
+$Comp
+L power:VCC #PWR05
+U 1 1 5D763C9C
+P 5200 4500
+F 0 "#PWR05" H 5200 4350 50  0001 C CNN
+F 1 "VCC" H 5200 4650 50  0000 C CNN
+F 2 "" H 5200 4500 50  0001 C CNN
+F 3 "" H 5200 4500 50  0001 C CNN
+	1    5200 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky D2
+U 1 1 5D6EA639
+P 3450 4500
+F 0 "D2" H 3450 4284 50  0000 C CNN
+F 1 "D_Schottky" H 3450 4375 50  0000 C CNN
+F 2 "" H 3450 4500 50  0001 C CNN
+F 3 "~" H 3450 4500 50  0001 C CNN
+	1    3450 4500
+	-1   0    0    1   
+$EndComp
+Connection ~ 3200 4500
+$Comp
+L Device:R R4
+U 1 1 5D7076DF
+P 5000 5050
+F 0 "R4" V 4900 5050 50  0000 C CNN
+F 1 "2k2" V 5000 5050 50  0000 C CNN
+F 2 "" V 4930 5050 50  0001 C CNN
+F 3 "~" H 5000 5050 50  0001 C CNN
+	1    5000 5050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_POT RV3
+U 1 1 5D70E321
+P 4800 5050
+F 0 "RV3" V 4700 5050 50  0000 C CNN
+F 1 "100k" V 4800 5050 50  0000 C CNN
+F 2 "" H 4800 5050 50  0001 C CNN
+F 3 "~" H 4800 5050 50  0001 C CNN
+	1    4800 5050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4800 5200 5000 5200
+Wire Wire Line
+	4650 4900 4650 5050
+Connection ~ 4800 5200
+Wire Wire Line
+	3900 5200 4800 5200
+Connection ~ 1900 4500
+Wire Wire Line
+	1600 4500 1600 4700
+Wire Wire Line
+	1600 5000 1600 5200
+Wire Wire Line
+	3600 4500 3700 4500
+Wire Wire Line
+	3900 4500 3900 4700
+Wire Wire Line
+	3900 5000 3900 5200
+Connection ~ 3900 4500
+Wire Wire Line
+	3700 4500 3700 4700
+Wire Wire Line
+	3700 5000 3700 5200
+Connection ~ 3700 4500
+Wire Wire Line
+	3700 4500 3900 4500
+Wire Wire Line
+	3900 4500 4350 4500
+Connection ~ 4800 4900
+Wire Wire Line
+	4800 4900 5000 4900
+Connection ~ 4650 4900
+Wire Wire Line
+	4800 4900 4650 4900
+Connection ~ 4350 4500
+Wire Wire Line
+	4500 4500 4350 4500
+Wire Wire Line
+	4500 4500 4800 4500
+Connection ~ 4500 4500
+Connection ~ 4800 4500
+Wire Wire Line
+	4800 4500 5000 4500
+Wire Wire Line
+	5000 4500 5200 4500
+Connection ~ 5000 4500
+Wire Wire Line
+	2600 4900 4650 4900
+Wire Wire Line
+	4800 4800 4800 4900
+Wire Wire Line
+	4500 4800 4650 4800
+Connection ~ 4800 4800
+Wire Wire Line
+	4800 4800 5000 4800
+Connection ~ 4650 4800
+Wire Wire Line
+	4650 4800 4800 4800
+Wire Wire Line
+	4650 4650 4650 4800
+$Comp
+L Device:R_POT RV2
+U 1 1 5D705A30
+P 4800 4650
+F 0 "RV2" V 4700 4650 50  0000 C CNN
+F 1 "100k" V 4800 4650 50  0000 C CNN
+F 2 "" H 4800 4650 50  0001 C CNN
+F 3 "~" H 4800 4650 50  0001 C CNN
+	1    4800 4650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5D706A91
+P 5000 4650
+F 0 "R3" V 4900 4650 50  0000 C CNN
+F 1 "82k" V 5000 4650 50  0000 C CNN
+F 2 "" V 4930 4650 50  0001 C CNN
+F 3 "~" H 5000 4650 50  0001 C CNN
+	1    5000 4650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4350 4500 4350 4650
+$Comp
+L Device:R_POT RV1
+U 1 1 5D717721
+P 4500 4650
+F 0 "RV1" V 4400 4650 50  0000 C CNN
+F 1 "100k" V 4500 4650 50  0000 C CNN
+F 2 "" H 4500 4650 50  0001 C CNN
+F 3 "~" H 4500 4650 50  0001 C CNN
+	1    4500 4650
+	-1   0    0    1   
+$EndComp
+Text Notes 5150 4700 0    50   ~ 0
+FeedbackHigh
+Text Notes 5150 5100 0    50   ~ 0
+FeedbackLow
+Text Label 1500 3000 2    50   ~ 0
+Vinput[3.5-5.5V]
+$Comp
+L Device:C C1
+U 1 1 5D6AF775
+P 1600 3350
+F 0 "C1" H 1600 3450 50  0000 L CNN
+F 1 "22u" H 1600 3250 50  0000 L CNN
+F 2 "" H 1638 3200 50  0001 C CNN
+F 3 "~" H 1600 3350 50  0001 C CNN
+	1    1600 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Switching:LMR10510XMF U2
+U 1 1 5D6AF77F
+P 2300 3300
+F 0 "U2" H 2150 3050 50  0000 C CNN
+F 1 "MT3608" H 2500 3050 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2350 3050 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lmr10510.pdf" H 2300 3400 50  0001 C CNN
+	1    2300 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 3000 1600 3000
+Connection ~ 1600 3000
+Wire Wire Line
+	1600 3000 1900 3000
+Wire Wire Line
+	2000 3400 1900 3400
+Wire Wire Line
+	1900 3400 1900 3200
+Connection ~ 1900 3200
+Wire Wire Line
+	1900 3200 2000 3200
+Wire Wire Line
+	2300 3600 2300 3700
+$Comp
+L power:GND #PWR02
+U 1 1 5D6AF791
+P 2300 3700
+F 0 "#PWR02" H 2300 3450 50  0001 C CNN
+F 1 "GND" H 2300 3550 50  0000 C CNN
+F 2 "" H 2300 3700 50  0001 C CNN
+F 3 "" H 2300 3700 50  0001 C CNN
+	1    2300 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 3700 2300 3700
+Connection ~ 2300 3700
+$Comp
+L Device:L L1
+U 1 1 5D6AF79D
+P 2350 3000
+F 0 "L1" V 2540 3000 50  0000 C CNN
+F 1 "22uH" V 2450 3000 50  0000 C CNN
+F 2 "" H 2350 3000 50  0001 C CNN
+F 3 "~" H 2350 3000 50  0001 C CNN
+	1    2350 3000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2200 3000 1900 3000
+Wire Wire Line
+	1900 3000 1900 3200
+Wire Wire Line
+	2500 3000 2700 3000
+Wire Wire Line
+	2700 3000 2700 3200
+Wire Wire Line
+	2700 3200 2600 3200
+Connection ~ 2700 3000
+$Comp
+L Device:C C6
+U 1 1 5D6AF7D5
+P 3700 3350
+F 0 "C6" H 3700 3450 50  0000 L CNN
+F 1 "22u" H 3700 3250 50  0000 L CNN
+F 2 "" H 3738 3200 50  0001 C CNN
+F 3 "~" H 3700 3350 50  0001 C CNN
+	1    3700 3350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C8
+U 1 1 5D6AF7DF
+P 3900 3350
+F 0 "C8" H 3900 3450 50  0000 L CNN
+F 1 "1u" H 3900 3250 50  0000 R CNN
+F 2 "" H 3938 3200 50  0001 C CNN
+F 3 "~" H 3900 3350 50  0001 C CNN
+	1    3900 3350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3700 3700 3900 3700
+Connection ~ 3700 3700
+Connection ~ 3900 3700
+$Comp
+L Device:D_Schottky D1
+U 1 1 5D6AF7F9
+P 3450 3000
+F 0 "D1" H 3450 2784 50  0000 C CNN
+F 1 "D_Schottky" H 3450 2875 50  0000 C CNN
+F 2 "" H 3450 3000 50  0001 C CNN
+F 3 "~" H 3450 3000 50  0001 C CNN
+	1    3450 3000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5D6AF804
+P 4350 3550
+F 0 "R2" V 4250 3550 50  0000 C CNN
+F 1 "12k" V 4350 3550 50  0000 C CNN
+F 2 "" V 4280 3550 50  0001 C CNN
+F 3 "~" H 4350 3550 50  0001 C CNN
+	1    4350 3550
+	-1   0    0    1   
+$EndComp
+Connection ~ 1900 3000
+Wire Wire Line
+	1600 3000 1600 3200
+Wire Wire Line
+	1600 3500 1600 3700
+Wire Wire Line
+	3900 3000 3900 3200
+Wire Wire Line
+	3900 3500 3900 3700
+Connection ~ 3900 3000
+Wire Wire Line
+	3700 3000 3700 3200
+Wire Wire Line
+	3700 3500 3700 3700
+Connection ~ 3700 3000
+Wire Wire Line
+	3700 3000 3900 3000
+$Comp
+L Device:R R1
+U 1 1 5D6AF846
+P 4350 3150
+F 0 "R1" V 4250 3150 50  0000 C CNN
+F 1 "100k" V 4350 3150 50  0000 C CNN
+F 2 "" V 4280 3150 50  0001 C CNN
+F 3 "~" H 4350 3150 50  0001 C CNN
+	1    4350 3150
+	-1   0    0    1   
+$EndComp
+Text Notes 4500 3200 0    50   ~ 0
+FeedbackHigh
+Text Notes 4500 3600 0    50   ~ 0
+FeedbackLow
+Wire Wire Line
+	3900 3000 4350 3000
+Wire Wire Line
+	3900 3700 4350 3700
+Wire Wire Line
+	4350 3300 4350 3400
+$Comp
+L Regulator_Linear:MIC5205-5.0YM5 U4
+U 1 1 5D701133
+P 5500 3300
+F 0 "U4" H 5500 3642 50  0000 C CNN
+F 1 "MIC5205-5.0YM5" H 5500 3551 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 5500 3625 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005785A.pdf" H 5500 3300 50  0001 C CNN
+	1    5500 3300
+	1    0    0    -1  
+$EndComp
+Connection ~ 4350 3000
+Wire Wire Line
+	2600 3400 4350 3400
+Connection ~ 4350 3400
+Wire Wire Line
+	5500 3700 5500 3600
+Connection ~ 4350 3700
+Wire Wire Line
+	5100 3000 5100 3200
+Wire Wire Line
+	5100 3300 5200 3300
+Wire Wire Line
+	5200 3200 5100 3200
+Connection ~ 5100 3200
+Wire Wire Line
+	5100 3200 5100 3300
+Wire Wire Line
+	4350 3000 5100 3000
+Wire Wire Line
+	4350 3700 5500 3700
+$Comp
+L Device:C C10
+U 1 1 5D74CE9B
+P 6000 3450
+F 0 "C10" H 6000 3550 50  0000 L CNN
+F 1 "2u2" H 6000 3350 50  0000 R CNN
+F 2 "" H 6038 3300 50  0001 C CNN
+F 3 "~" H 6000 3450 50  0001 C CNN
+	1    6000 3450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6000 3700 6000 3600
+Wire Wire Line
+	5800 3200 6000 3200
+Connection ~ 6000 3200
+Wire Wire Line
+	6000 3200 6000 3300
+Connection ~ 5500 3700
+Wire Wire Line
+	5500 3700 6000 3700
+NoConn ~ 5800 3300
+Wire Wire Line
+	6000 3000 6000 3200
+$Comp
+L power:+5V #PWR06
+U 1 1 5D778880
+P 6000 3000
+F 0 "#PWR06" H 6000 2850 50  0001 C CNN
+F 1 "+5V" H 6000 3150 50  0000 C CNN
+F 2 "" H 6000 3000 50  0001 C CNN
+F 3 "" H 6000 3000 50  0001 C CNN
+	1    6000 3000
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 9000 4000 1000 1000
+U 5D77FCEA
+F0 "breadboard" 50
+F1 "breadboard.sch" 50
+F2 "VCC1" I L 9000 4100 50 
+F3 "VCC2" I L 9000 4200 50 
+F4 "5V" I L 9000 4400 50 
+F5 "3V3" I L 9000 4500 50 
+$EndSheet
+$Sheet
+S 1500 1000 1000 400 
+U 5D7FBCF6
+F0 "power_input" 50
+F1 "power_input.sch" 50
+F2 "Vinput" I R 2500 1200 50 
+$EndSheet
+Text Label 2500 1200 0    50   ~ 0
+Vinput[3.5-5.5V]
+Wire Wire Line
+	2300 3700 3700 3700
+Wire Wire Line
+	3600 3000 3700 3000
+Wire Wire Line
+	2700 3000 3300 3000
+Wire Wire Line
+	3200 4500 3200 4800
+$Sheet
+S 9000 2500 900  400 
+U 5D83A7BB
+F0 "voltage_meter" 50
+F1 "voltage_meter.sch" 50
+F2 "Vmes" I L 9000 2700 50 
+$EndSheet
+$EndSCHEMATC
